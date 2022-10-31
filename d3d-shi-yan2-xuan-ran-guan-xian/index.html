@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" style="--theme-color: #262626; --link-color: #262626;">
+<head>
+  <meta charset="UTF-8">
+  <title>D3D 实验2：渲染管线 - 油油</title>
+
+  <link rel="icon" href="https://static.gridea.dev/310489138985960002/RhpAONXzE.gif">
+<!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> -->
+<link rel="alternate" type="application/atom+xml" title="油油 - Atom Feed" href="https://blog.200011.net/atom.xml">
+
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?1f7f64d58220d64d15d003e8d8733430";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFCRR8Q57W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script> -->
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-182385326-1');
+    ga('set', 'dimension1', 'site/h5wc7PmcU');
+    ga('set', 'dimension2', 'post/sH8Pv4S4n');
+    ga('send', 'pageview');
+    // gtag('set', {
+    //   'custom_map': {
+    //     'dimension1': 'siteId',
+    //     'dimension2': 'postId',
+    //   }
+    // })
+
+    // gtag('config', 'G-NFCRR8Q57W', {
+    //   'siteId': 'site/h5wc7PmcU',
+    //   'postId': 'post/sH8Pv4S4n',
+    // });
+  </script>
+
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="
+输入汇编器阶段
+从内存读取几何数据（顶点和索引）并用这些数据组合为几何图元，构建多边形（点、线段、三角形）。构建多边形的方法取决于所用的基本图元的拓扑类型。
+顶点
+D3D中顶点由空间位置和各种附加属性组成；定义顶点必须附带描述D3D10_...">
+
+  <meta property="og:title" content="D3D 实验2：渲染管线 - 油油">
+  <meta property="og:description" content="
+输入汇编器阶段
+从内存读取几何数据（顶点和索引）并用这些数据组合为几何图元，构建多边形（点、线段、三角形）。构建多边形的方法取决于所用的基本图元的拓扑类型。
+顶点
+D3D中顶点由空间位置和各种附加属性组成；定义顶点必须附带描述D3D10_...">
+  
+  <meta property="og:url" content="https://blog.200011.net/d3d-shi-yan2-xuan-ran-guan-xian/">
+  <meta property="og:site_name" content="油油">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image:alt" content="D3D 实验2：渲染管线">
+
+  <meta name="gridea:post_id" content="sH8Pv4S4n">
+
+  <link rel="canonical" href="https://blog.200011.net/d3d-shi-yan2-xuan-ran-guan-xian">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.0.3/styles/a11y-light.css">
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/css/main.css">
+
+</head>
+<body>
+  
+    <link rel="stylesheet" href="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css">
+  
+  <div id="page">
+    <div class="mb-16 sticky top-0 z-20 bg-white">
+  <header class="py-4 flex items-baseline justify-between max-w-2xl mx-auto px-2">
+    <h1 class="text-lg text-center font-medium px-4 md:px-0 flex items-center">
+      <div class="site-logo-text font-normal">油</div>
+      <a href="/">油油</a>
+    </h1>
+    <div class="hidden sm:flex justify-center">
+      
+        
+        <a
+          href="https://www.200011.net"
+          class="mx-2 text-base border-b border-transparent"
+          target="_blank"
+        >主页</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href="/about"
+          class="mx-2 text-base border-b border-transparent"
+          
+        >关于</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href="/tags/blog"
+          class="mx-2 text-base border-b border-transparent"
+          
+        >随笔</a>
+        
+      
+    </div>
+    <div class="flex sm:hidden py-2 px-4 text-center cursor-pointer" @click="openMenu = true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></svg>
+    </div>
+  </header>
+
+  <div class="fixed top-0 right-0 bottom-0 left-0 bg-white hidden" :style="{
+    display: openMenu ? 'block !important' : 'none',
+  }" v-if="openMenu">
+    <div class="py-4 px-2 flex justify-end" @click="openMenu = false">
+      <div class="flex py-2 px-4 text-center cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+      </div>
+    </div>
+    <div class="flex flex-col p-4">
+      
+        
+        <a
+          href="https://www.200011.net"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          target="_blank"
+        >主页</a>
+      
+        
+        <a
+          href="/about"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        >关于</a>
+      
+        
+        <a
+          href="/tags/blog"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        >随笔</a>
+      
+    </div>
+  </div>
+</div>
+    <div class="border-b border-gray-200">
+      <div class="max-w-2xl mx-auto px-6 md:px-2">
+        <div class="my-24 text-center">
+          <h1 class="text-2xl font-bold">D3D 实验2：渲染管线</h1>
+          <div class="post-title-bar mx-auto rounded mt-4"></div>
+          <div class="text-gray-400 mt-4">2022.09.08</div>
+          <div class="flex justify-center mt-4">
+            
+              <a href="https://blog.200011.net/tags/d3d" class="inline-flex items-center mr-4 text-sm text-gray-600">
+                <span class="mr-1">#</span>DirectX3D
+              </a>
+            
+              <a href="https://blog.200011.net/tags/cpp" class="inline-flex items-center mr-4 text-sm text-gray-600">
+                <span class="mr-1">#</span>C++
+              </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="sticky-bar" class="w-full sticky top-0 z-10 bg-white" style="height: 64px;"></div>
+    <div class="p-4 md:p-16 bg-white">
+      <div class="max-w-2xl mx-auto px-4 flex relative">
+        <section class="post-content flex-1 default-post-content max-w-2xl">
+          <div v-pre>
+            <div class="yoniu-aplayer" data-name="还在流浪" data-artist="jay" data-cover="https://p2.music.126.net/VldbGI7kjph0TeIbttQHGQ==/109951167672625652.jpg?param=120y120" data-url="https://link.jscdn.cn/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBaG9Bb3NIbnVIQkJsaUZJYzJHRDZaUy1VRTVGP2U9UkdYcDUw.flac"></div>
+<h2 id="输入汇编器阶段">输入汇编器阶段</h2>
+<p>从内存读取几何数据（顶点和索引）并用这些数据组合为几何图元，构建多边形（点、线段、三角形）。构建多边形的方法取决于所用的基本图元的<strong>拓扑类型</strong>。</p>
+<h3 id="顶点">顶点</h3>
+<p>D3D中顶点由空间位置和各种附加属性组成；定义顶点必须附带描述<code>D3D10_INPUT_ELEMENT_DESC</code></p>
+<p>例如：</p>
+<pre><code class="language-cpp">// 顶点定义
+struct Vertex1 {
+	D3DXVECTOR3 pos;
+  D3DXCOLOR color;
+};
+// 顶点描述
+D3D10_INPUT_ELEMENT_DESC vertexDesc[] = {
+	{&quot;POSITION&quot;, 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 0, D3D10_INPUT_PER_VERTEX_DATA, 0},
+  {&quot;COLOR&quot;, 0, DXGI_FORMAT_R32G32B32A32_FLOAT, 0, 12, D3D10_INPUT_PER_VERTEX_DATA, 0}
+};
+</code></pre>
+<h3 id="顶点缓冲区">顶点缓冲区</h3>
+<p>为了让GPU访问顶点数组，必须把它放置在一个称为缓冲区的特殊资源容器中，该容器由<code>ID3D10Buffer</code>接口表示。创建一个顶点缓冲区的步骤：</p>
+<ul>
+<li>填写一个<code>D3D10_BUFFER_DESC</code>结构体，描述我们所要创建的缓冲区。</li>
+<li>填写一个<code>D3D10_SUBRESOURCE_DATA</code>结构体，为缓冲区指定初始化数据。</li>
+<li>调用<code>ID3D10Device::CreateBuffer</code>方法来创建缓冲区。</li>
+</ul>
+<h3 id="图元拓扑">图元拓扑</h3>
+<p>顶点缓冲区只是在连续的内存中存储了一个顶点列表，它并没有说明以何种方式组织顶点，形成几何图元。所以需要通过指定图元拓扑来告诉D3D以何种方式组成几何图元。</p>
+<ul>
+<li>点列表</li>
+<li>线带</li>
+<li>线列</li>
+<li>三角形带</li>
+<li>三角形列</li>
+</ul>
+<h3 id="索引和索引缓冲区">索引和索引缓冲区</h3>
+<p><strong>索引</strong><br>
+创建一个顶点列表和索引列表。顶点列表包含所有唯一的顶点，而索引列表包含指向顶点列表的索引值，这些索引定义了顶点以何种方式组成三角形。</p>
+<h2 id="实验">实验</h2>
+<p>根据实验文件修改部分代码并理解。</p>
+<pre><code class="language-cpp">	//设置顶点和索引的数量
+	HRESULT hr = S_OK;
+	mVertexCount = 3; // 顶点数量
+	mIndexCount = 3; // 索引数量
+	//设置顶点数组，填充其中每个顶点数据 （三角形）
+	ColorVertex vertices[] = {
+		{ D3DXVECTOR3(0.0f, 1.0f, 1.0f), WHITE },
+		{ D3DXVECTOR3(1.0f, 1.0f, 1.0f), BLACK },
+		{ D3DXVECTOR3(1.0f, 0.0f, 1.0f), RED }
+	};
+	//设置索引数组，填充其中每个索引数据
+	DWORD indices[] = { 0, 1, 2 };
+  ...
+  // 设置顶点缓冲区大小
+	vbd.ByteWidth = sizeof(ColorVertex) * mVertexCount;
+  // 创建顶点缓冲区
+  // vbd 为所创建缓冲区、vinitData 为顶点数据、mVertexBuffer
+  pD3dDevice-&gt;CreateBuffer(&amp;vbd, &amp;vinitData, &amp;mVertexBuffer)
+  // 设置图元拓扑类型：三角形列
+	pD3dDevice-&gt;IASetPrimitiveTopology(D3D10_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+  
+</code></pre>
+<h3 id="实验结果">实验结果</h3>
+<p><img src="https://static.gridea.dev/310489138985960002/pZLo8wwk7.jpg" alt="" loading="lazy"></p>
+<h3 id="绘制四边形">绘制四边形</h3>
+<p>方法：使用<code>三角形列</code>修改顶点索引、顶点数量、顶点数组。</p>
+<p>结果：</p>
+<p><img src="https://static.gridea.dev/310489138985960002/XtF4YDf9Z.jpg" alt="" loading="lazy"></p>
+<h3 id="拉远摄像机位置两倍">拉远摄像机位置（两倍）</h3>
+<p>方法：修改<code>D3DXMatrixLookAtLH()</code>传入的<code>pos</code>第三个参数，传入正整数则拉近摄像机，传入负整数则拉远摄像机。</p>
+
+          </div>
+          <div class="py-4 text-gray-600 flex items-center justify-between">
+            <div class="">
+              <div class="text-sm text-gray-300">最后更新于: </div>
+              <div class="text-base font-medium">2022.09.08</div>
+            </div>
+            <!-- <div class="flex items-center text-sm text-gray-600">
+              <i class="ri-eye-line"></i> <span class="ml-2">{{ views }}</span>
+            </div> -->
+          </div>
+          <div>
+            <div id="disqus_thread"></div>
+          </div>
+        </section>
+        
+          <!-- <aside class="sticky toc-container flex-shrink-0 hidden md:block">
+            <div class="text-gray-600 mb-4">目 录</div>
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%BE%93%E5%85%A5%E6%B1%87%E7%BC%96%E5%99%A8%E9%98%B6%E6%AE%B5">输入汇编器阶段</a>
+<ul>
+<li><a href="#%E9%A1%B6%E7%82%B9">顶点</a></li>
+<li><a href="#%E9%A1%B6%E7%82%B9%E7%BC%93%E5%86%B2%E5%8C%BA">顶点缓冲区</a></li>
+<li><a href="#%E5%9B%BE%E5%85%83%E6%8B%93%E6%89%91">图元拓扑</a></li>
+<li><a href="#%E7%B4%A2%E5%BC%95%E5%92%8C%E7%B4%A2%E5%BC%95%E7%BC%93%E5%86%B2%E5%8C%BA">索引和索引缓冲区</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%9E%E9%AA%8C">实验</a>
+<ul>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C">实验结果</a></li>
+<li><a href="#%E7%BB%98%E5%88%B6%E5%9B%9B%E8%BE%B9%E5%BD%A2">绘制四边形</a></li>
+<li><a href="#%E6%8B%89%E8%BF%9C%E6%91%84%E5%83%8F%E6%9C%BA%E4%BD%8D%E7%BD%AE%E4%B8%A4%E5%80%8D">拉远摄像机位置（两倍）</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </aside> -->
+        
+      </div>
+    </div>
+    <div class="py-8 text-gray-300 text-center border-t border-gray-200">
+  Powered by Gridea
+</div>
+  </div>
+
+  <script src="//cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  
+  <script src="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/js/main.js"></script>
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+    <script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://y-notebook.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+  
+  
+    <script src="//tokinx.github.io/ViewImage/view-image.min.js"></script>
+<script src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script>
+    window.ViewImage && ViewImage.init('.post-content img');
+    setTimeout(function () {
+      const elements = document.querySelectorAll('.post-content p a');
+      for (let elem of elements) { elem.target="_blank" }
+    }, 300);
+    setTimeout(function () {
+      const elements = document.querySelectorAll('.yoniu-aplayer');
+      for (let elem of elements) {
+        const url = elem.getAttribute('data-url'),
+              name = elem.getAttribute('data-name'),
+              artist = elem.getAttribute('data-artist'),
+              cover = elem.getAttribute('data-cover');
+        const ap = new APlayer({
+          container: elem,
+          audio: [{
+            name,
+            artist,
+            url,
+            cover
+          }]
+        });
+      }
+    }, 300);
+</script>
+  
+</body>
+</html>

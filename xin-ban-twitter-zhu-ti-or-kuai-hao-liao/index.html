@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" style="--theme-color: #262626; --link-color: #262626;">
+<head>
+  <meta charset="UTF-8">
+  <title>新版 Twitter 主题 | 快好了 - 油油</title>
+
+  <link rel="icon" href="https://static.gridea.dev/310489138985960002/RhpAONXzE.gif">
+<!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> -->
+<link rel="alternate" type="application/atom+xml" title="油油 - Atom Feed" href="https://blog.200011.net/atom.xml">
+
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?1f7f64d58220d64d15d003e8d8733430";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFCRR8Q57W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script> -->
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-182385326-1');
+    ga('set', 'dimension1', 'site/h5wc7PmcU');
+    ga('set', 'dimension2', 'post/wNENM2CjQ');
+    ga('send', 'pageview');
+    // gtag('set', {
+    //   'custom_map': {
+    //     'dimension1': 'siteId',
+    //     'dimension2': 'postId',
+    //   }
+    // })
+
+    // gtag('config', 'G-NFCRR8Q57W', {
+    //   'siteId': 'site/h5wc7PmcU',
+    //   'postId': 'post/wNENM2CjQ',
+    // });
+  </script>
+
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="
+这次会开源，大家要主题源码的话，不要给我发邮件、加 QQ 了，交流的话很欢迎的（记得备注）。到时候会开源在 Github，原来的 Twitter 主题会员可以联系我要开发版。
+这次的更新拖了一年多快两年了，主要原因是我可能偷懒严重，客观原...">
+
+  <meta property="og:title" content="新版 Twitter 主题 | 快好了 - 油油">
+  <meta property="og:description" content="
+这次会开源，大家要主题源码的话，不要给我发邮件、加 QQ 了，交流的话很欢迎的（记得备注）。到时候会开源在 Github，原来的 Twitter 主题会员可以联系我要开发版。
+这次的更新拖了一年多快两年了，主要原因是我可能偷懒严重，客观原...">
+  
+  <meta property="og:url" content="https://blog.200011.net/xin-ban-twitter-zhu-ti-or-kuai-hao-liao/">
+  <meta property="og:site_name" content="油油">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image:alt" content="新版 Twitter 主题 | 快好了">
+
+  <meta name="gridea:post_id" content="wNENM2CjQ">
+
+  <link rel="canonical" href="https://blog.200011.net/xin-ban-twitter-zhu-ti-or-kuai-hao-liao">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.0.3/styles/a11y-light.css">
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/css/main.css">
+
+</head>
+<body>
+  
+    <link rel="stylesheet" href="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css">
+  
+  <div id="page">
+    <div class="mb-16 sticky top-0 z-20 bg-white">
+  <header class="py-4 flex items-baseline justify-between max-w-2xl mx-auto px-2">
+    <h1 class="text-lg text-center font-medium px-4 md:px-0 flex items-center">
+      <div class="site-logo-text font-normal">油</div>
+      <a href="/">油油</a>
+    </h1>
+    <div class="hidden sm:flex justify-center">
+      
+        
+        <a
+          href="https://www.200011.net"
+          class="mx-2 text-base border-b border-transparent"
+          target="_blank"
+        >主页</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href="/about"
+          class="mx-2 text-base border-b border-transparent"
+          
+        >关于</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href="/tags/blog"
+          class="mx-2 text-base border-b border-transparent"
+          
+        >随笔</a>
+        
+      
+    </div>
+    <div class="flex sm:hidden py-2 px-4 text-center cursor-pointer" @click="openMenu = true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></svg>
+    </div>
+  </header>
+
+  <div class="fixed top-0 right-0 bottom-0 left-0 bg-white hidden" :style="{
+    display: openMenu ? 'block !important' : 'none',
+  }" v-if="openMenu">
+    <div class="py-4 px-2 flex justify-end" @click="openMenu = false">
+      <div class="flex py-2 px-4 text-center cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+      </div>
+    </div>
+    <div class="flex flex-col p-4">
+      
+        
+        <a
+          href="https://www.200011.net"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          target="_blank"
+        >主页</a>
+      
+        
+        <a
+          href="/about"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        >关于</a>
+      
+        
+        <a
+          href="/tags/blog"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        >随笔</a>
+      
+    </div>
+  </div>
+</div>
+    <div class="border-b border-gray-200">
+      <div class="max-w-2xl mx-auto px-6 md:px-2">
+        <div class="my-24 text-center">
+          <h1 class="text-2xl font-bold">新版 Twitter 主题 | 快好了</h1>
+          <div class="post-title-bar mx-auto rounded mt-4"></div>
+          <div class="text-gray-400 mt-4">2022.10.10</div>
+          <div class="flex justify-center mt-4">
+            
+              <a href="https://blog.200011.net/tags/blog" class="inline-flex items-center mr-4 text-sm text-gray-600">
+                <span class="mr-1">#</span>随笔
+              </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="sticky-bar" class="w-full sticky top-0 z-10 bg-white" style="height: 64px;"></div>
+    <div class="p-4 md:p-16 bg-white">
+      <div class="max-w-2xl mx-auto px-4 flex relative">
+        <section class="post-content flex-1 default-post-content max-w-2xl">
+          <div v-pre>
+            <div class="yoniu-aplayer" data-name="Finest Hour" data-artist="Gavin DeGraw" data-cover="https://p1.music.126.net/kHPD4DlJD5ZmbOv42CQFYg==/109951165967342186.jpg?param=120y120" data-url="https://link.jscdn.cn/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBaG9Bb3NIbnVIQkJna3hZVk9iMDVEU1FtOThpP2U9NjM2bEx6.mp3"></div>
+<p>这次会开源，大家要主题源码的话，不要给我发邮件、加 QQ 了，交流的话很欢迎的（记得备注）。到时候会开源在 Github，原来的 Twitter 主题会员可以联系我要开发版。</p>
+<p>这次的更新拖了一年多快两年了，主要原因是我可能偷懒严重，客观原因可能是一些小问题（很无语老铁）。</p>
+<p>在后台设置、前台布局都做了大整改，文章内页、列表也重新做了设计，还有一些新想法的尝试、一些轮子自己造，部分功能秉承<strong>能跑就行</strong>的原则。现在在做主题官网，再等一段时间就可以跟大家见面了。</p>
+<p>感谢 <a href="https://usj.cc/">@小赵同学</a> 帮忙找 bug，写修改意见。</p>
+<p>还有 <a href="https://sumiler.com">@苏米乐</a>、<a href="https://blog.u82.cc/">@尤且</a>。</p>
+<p>预览站点：</p>
+<p><a href="https://usj.cc/">https://usj.cc/</a></p>
+<p><a href="https://blog.u82.cc/">https://blog.u82.cc/</a></p>
+<p><a href="https://sumiler.com/">https://sumiler.com/</a></p>
+<p>来几个图压压惊：</p>
+<p><img src="https://static.gridea.dev/310489138985960002/Zt1t_wVKe.png" alt="" loading="lazy"><br>
+<img src="https://static.gridea.dev/310489138985960002/xQDTeawLT.png" alt="" loading="lazy"><br>
+<img src="https://static.gridea.dev/310489138985960002/jpBNGLMbY.png" alt="" loading="lazy"></p>
+
+          </div>
+          <div class="py-4 text-gray-600 flex items-center justify-between">
+            <div class="">
+              <div class="text-sm text-gray-300">最后更新于: </div>
+              <div class="text-base font-medium">2022.10.31</div>
+            </div>
+            <!-- <div class="flex items-center text-sm text-gray-600">
+              <i class="ri-eye-line"></i> <span class="ml-2">{{ views }}</span>
+            </div> -->
+          </div>
+          <div>
+            <div id="disqus_thread"></div>
+          </div>
+        </section>
+        
+      </div>
+    </div>
+    <div class="py-8 text-gray-300 text-center border-t border-gray-200">
+  Powered by Gridea
+</div>
+  </div>
+
+  <script src="//cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  
+  <script src="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/js/main.js"></script>
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+    <script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://y-notebook.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+  
+  
+    <script src="//tokinx.github.io/ViewImage/view-image.min.js"></script>
+<script src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script>
+    window.ViewImage && ViewImage.init('.post-content img');
+    setTimeout(function () {
+      const elements = document.querySelectorAll('.post-content p a');
+      for (let elem of elements) { elem.target="_blank" }
+    }, 300);
+    setTimeout(function () {
+      const elements = document.querySelectorAll('.yoniu-aplayer');
+      for (let elem of elements) {
+        const url = elem.getAttribute('data-url'),
+              name = elem.getAttribute('data-name'),
+              artist = elem.getAttribute('data-artist'),
+              cover = elem.getAttribute('data-cover');
+        const ap = new APlayer({
+          container: elem,
+          audio: [{
+            name,
+            artist,
+            url,
+            cover
+          }]
+        });
+      }
+    }, 300);
+</script>
+  
+</body>
+</html>

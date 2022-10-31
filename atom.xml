@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>blog.200011.net</id>
+    <title>油油</title>
+    <updated>2022-10-31T14:12:17.437Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="blog.200011.net"/>
+    <link rel="self" href="blog.200011.net/atom.xml"/>
+    <subtitle>Twitter 主题准备开源了，别在找别人要了，服了，我等下一套军体拳就过去</subtitle>
+    <logo>https://static.gridea.dev/310489138985960002/RhpAONXzE.gif</logo>
+    <icon>https://static.gridea.dev/310489138985960002/RhpAONXzE.gif</icon>
+    <rights>All rights reserved 2022, 油油</rights>
+    <entry>
+        <title type="html"><![CDATA[新版 Twitter 主题 | 快好了]]></title>
+        <id>https://blog.200011.net/xin-ban-twitter-zhu-ti-or-kuai-hao-liao</id>
+        <link href="https://blog.200011.net/xin-ban-twitter-zhu-ti-or-kuai-hao-liao"/>
+        <updated>2022-10-10T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[
+这次会开源，大家要主题源码的话，不要给我发邮件、加 QQ 了，交流的话很欢迎的（记得备注）。到时候会开源在 Github，原来的 Twitter 主题会员可以联系我要开发版。
+这次的更新拖了一年多快两年了，主要原因是我可能偷懒严重，客观原...]]></summary>
+        <content type="html"><![CDATA[<div class="yoniu-aplayer" data-name="Finest Hour" data-artist="Gavin DeGraw" data-cover="https://p1.music.126.net/kHPD4DlJD5ZmbOv42CQFYg==/109951165967342186.jpg?param=120y120" data-url="https://link.jscdn.cn/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBaG9Bb3NIbnVIQkJna3hZVk9iMDVEU1FtOThpP2U9NjM2bEx6.mp3"></div>
+<p>这次会开源，大家要主题源码的话，不要给我发邮件、加 QQ 了，交流的话很欢迎的（记得备注）。到时候会开源在 Github，原来的 Twitter 主题会员可以联系我要开发版。</p>
+<p>这次的更新拖了一年多快两年了，主要原因是我可能偷懒严重，客观原因可能是一些小问题（很无语老铁）。</p>
+<p>在后台设置、前台布局都做了大整改，文章内页、列表也重新做了设计，还有一些新想法的尝试、一些轮子自己造，部分功能秉承<strong>能跑就行</strong>的原则。现在在做主题官网，再等一段时间就可以跟大家见面了。</p>
+<p>感谢 <a href="https://usj.cc/">@小赵同学</a> 帮忙找 bug，写修改意见。</p>
+<p>还有 <a href="https://sumiler.com">@苏米乐</a>、<a href="https://blog.u82.cc/">@尤且</a>。</p>
+<p>预览站点：</p>
+<p><a href="https://usj.cc/">https://usj.cc/</a></p>
+<p><a href="https://blog.u82.cc/">https://blog.u82.cc/</a></p>
+<p><a href="https://sumiler.com/">https://sumiler.com/</a></p>
+<p>来几个图压压惊：</p>
+<p><img src="https://static.gridea.dev/310489138985960002/Zt1t_wVKe.png" alt="" loading="lazy"><br>
+<img src="https://static.gridea.dev/310489138985960002/xQDTeawLT.png" alt="" loading="lazy"><br>
+<img src="https://static.gridea.dev/310489138985960002/jpBNGLMbY.png" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[把项目迁移到 CloudStudio 开发]]></title>
+        <id>https://blog.200011.net/ba-xiang-mu-qian-yi-dao-cloudstudio-kai-fa</id>
+        <link href="https://blog.200011.net/ba-xiang-mu-qian-yi-dao-cloudstudio-kai-fa"/>
+        <updated>2022-10-10T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[19年的时候一时脑热买了这台荣耀笔记本，现在内存、硬盘一直处于一整个大爆满的状态。平时基本开两个VS code内存就能狂飙到 89%，写D3D基本上是边点加速球边敲键盘。
+前段时间在找Coding上的文件，突然又翻到CloudStudio。...]]></summary>
+        <content type="html"><![CDATA[<p>19年的时候一时脑热买了这台荣耀笔记本，现在内存、硬盘一直处于一整个大爆满的状态。平时基本开两个<code>VS code</code>内存就能狂飙到 89%，写<code>D3D</code>基本上是边点加速球边敲键盘。</p>
+<p>前段时间在找<code>Coding</code>上的文件，突然又翻到<code>CloudStudio</code>。老实说这个<code>Coding</code>真是让我又爱又恨（静态Pages收nm费。</p>
+<p>当时刚好在看<code>Cloudflare Worker</code>文档，就简单尝试一下新建一个环境，但是在安装worker脚手架的时候一直失败。于是好巧不巧我有一台积灰的服务器，刚好用来搭建环境。在一顿操作后，在上面尝试使用<code>Nuxt3</code>+<code>Coding</code>+<code>腾讯云Cos</code>持续部署，尝试使用<code>Cloudflare Worker</code>+<code>Cloudflare Worker KV</code>做<code>RestAPI</code>，好巧不巧都成功了。</p>
+<p>然后，我就把最近在开发的小项目，包括数字产品课的<code>Phaser3</code>游戏一起放到上面做协同开发。之前项目<code>git</code>都是放在 Github，现在都是放在<code>Coding</code>(别跑路谢谢，这样我的组员们也不用科学上网去 Github 拉文件、Push。反正就是很方便很方便。推荐一下。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[WebSocket 实现聊天室]]></title>
+        <id>https://blog.200011.net/websocket-shi-xian-liao-tian-shi</id>
+        <link href="https://blog.200011.net/websocket-shi-xian-liao-tian-shi"/>
+        <updated>2022-09-18T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[......
+我发现我写了半天的文字不见了
+]]></summary>
+        <content type="html"><![CDATA[<p>......</p>
+<p>我发现我写了半天的文字不见了</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[D3D 实验2：渲染管线]]></title>
+        <id>https://blog.200011.net/d3d-shi-yan2-xuan-ran-guan-xian</id>
+        <link href="https://blog.200011.net/d3d-shi-yan2-xuan-ran-guan-xian"/>
+        <updated>2022-09-08T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[
+输入汇编器阶段
+从内存读取几何数据（顶点和索引）并用这些数据组合为几何图元，构建多边形（点、线段、三角形）。构建多边形的方法取决于所用的基本图元的拓扑类型。
+顶点
+D3D中顶点由空间位置和各种附加属性组成；定义顶点必须附带描述D3D10_...]]></summary>
+        <content type="html"><![CDATA[<div class="yoniu-aplayer" data-name="还在流浪" data-artist="jay" data-cover="https://p2.music.126.net/VldbGI7kjph0TeIbttQHGQ==/109951167672625652.jpg?param=120y120" data-url="https://link.jscdn.cn/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBaG9Bb3NIbnVIQkJsaUZJYzJHRDZaUy1VRTVGP2U9UkdYcDUw.flac"></div>
+<h2 id="输入汇编器阶段">输入汇编器阶段</h2>
+<p>从内存读取几何数据（顶点和索引）并用这些数据组合为几何图元，构建多边形（点、线段、三角形）。构建多边形的方法取决于所用的基本图元的<strong>拓扑类型</strong>。</p>
+<h3 id="顶点">顶点</h3>
+<p>D3D中顶点由空间位置和各种附加属性组成；定义顶点必须附带描述<code>D3D10_INPUT_ELEMENT_DESC</code></p>
+<p>例如：</p>
+<pre><code class="language-cpp">// 顶点定义
+struct Vertex1 {
+	D3DXVECTOR3 pos;
+  D3DXCOLOR color;
+};
+// 顶点描述
+D3D10_INPUT_ELEMENT_DESC vertexDesc[] = {
+	{&quot;POSITION&quot;, 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 0, D3D10_INPUT_PER_VERTEX_DATA, 0},
+  {&quot;COLOR&quot;, 0, DXGI_FORMAT_R32G32B32A32_FLOAT, 0, 12, D3D10_INPUT_PER_VERTEX_DATA, 0}
+};
+</code></pre>
+<h3 id="顶点缓冲区">顶点缓冲区</h3>
+<p>为了让GPU访问顶点数组，必须把它放置在一个称为缓冲区的特殊资源容器中，该容器由<code>ID3D10Buffer</code>接口表示。创建一个顶点缓冲区的步骤：</p>
+<ul>
+<li>填写一个<code>D3D10_BUFFER_DESC</code>结构体，描述我们所要创建的缓冲区。</li>
+<li>填写一个<code>D3D10_SUBRESOURCE_DATA</code>结构体，为缓冲区指定初始化数据。</li>
+<li>调用<code>ID3D10Device::CreateBuffer</code>方法来创建缓冲区。</li>
+</ul>
+<h3 id="图元拓扑">图元拓扑</h3>
+<p>顶点缓冲区只是在连续的内存中存储了一个顶点列表，它并没有说明以何种方式组织顶点，形成几何图元。所以需要通过指定图元拓扑来告诉D3D以何种方式组成几何图元。</p>
+<ul>
+<li>点列表</li>
+<li>线带</li>
+<li>线列</li>
+<li>三角形带</li>
+<li>三角形列</li>
+</ul>
+<h3 id="索引和索引缓冲区">索引和索引缓冲区</h3>
+<p><strong>索引</strong><br>
+创建一个顶点列表和索引列表。顶点列表包含所有唯一的顶点，而索引列表包含指向顶点列表的索引值，这些索引定义了顶点以何种方式组成三角形。</p>
+<h2 id="实验">实验</h2>
+<p>根据实验文件修改部分代码并理解。</p>
+<pre><code class="language-cpp">	//设置顶点和索引的数量
+	HRESULT hr = S_OK;
+	mVertexCount = 3; // 顶点数量
+	mIndexCount = 3; // 索引数量
+	//设置顶点数组，填充其中每个顶点数据 （三角形）
+	ColorVertex vertices[] = {
+		{ D3DXVECTOR3(0.0f, 1.0f, 1.0f), WHITE },
+		{ D3DXVECTOR3(1.0f, 1.0f, 1.0f), BLACK },
+		{ D3DXVECTOR3(1.0f, 0.0f, 1.0f), RED }
+	};
+	//设置索引数组，填充其中每个索引数据
+	DWORD indices[] = { 0, 1, 2 };
+  ...
+  // 设置顶点缓冲区大小
+	vbd.ByteWidth = sizeof(ColorVertex) * mVertexCount;
+  // 创建顶点缓冲区
+  // vbd 为所创建缓冲区、vinitData 为顶点数据、mVertexBuffer
+  pD3dDevice-&gt;CreateBuffer(&amp;vbd, &amp;vinitData, &amp;mVertexBuffer)
+  // 设置图元拓扑类型：三角形列
+	pD3dDevice-&gt;IASetPrimitiveTopology(D3D10_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+  
+</code></pre>
+<h3 id="实验结果">实验结果</h3>
+<p><img src="https://static.gridea.dev/310489138985960002/pZLo8wwk7.jpg" alt="" loading="lazy"></p>
+<h3 id="绘制四边形">绘制四边形</h3>
+<p>方法：使用<code>三角形列</code>修改顶点索引、顶点数量、顶点数组。</p>
+<p>结果：</p>
+<p><img src="https://static.gridea.dev/310489138985960002/XtF4YDf9Z.jpg" alt="" loading="lazy"></p>
+<h3 id="拉远摄像机位置两倍">拉远摄像机位置（两倍）</h3>
+<p>方法：修改<code>D3DXMatrixLookAtLH()</code>传入的<code>pos</code>第三个参数，传入正整数则拉近摄像机，传入负整数则拉远摄像机。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[实验一：初始化D3D]]></title>
+        <id>https://blog.200011.net/shi-yan-yi-chu-shi-huad3d</id>
+        <link href="https://blog.200011.net/shi-yan-yi-chu-shi-huad3d"/>
+        <updated>2022-08-30T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[项目属性设置包含目录、库目录
+]]></summary>
+        <content type="html"><![CDATA[<p><code>项目属性</code>设置<code>包含目录</code>、<code>库目录</code></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[@media screen针对不同移动设备-响应式设计]]></title>
+        <id>https://blog.200011.net/media-screen-zhen-dui-bu-tong-yi-dong-she-bei</id>
+        <link href="https://blog.200011.net/media-screen-zhen-dui-bu-tong-yi-dong-she-bei"/>
+        <updated>2022-08-26T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[概念：
+device-pixel-ratio：定义输入设备屏幕的可视宽度与可见高度比率。
+device-width：输入设备屏幕的可视宽度。
+orientation：屏幕横竖屏定向。landscape 是横向，portrait 是纵向【ip...]]></summary>
+        <content type="html"><![CDATA[<p>概念：<br>
+<code>device-pixel-ratio</code>：定义输入设备屏幕的可视宽度与可见高度比率。</p>
+<p><code>device-width</code>：输入设备屏幕的可视宽度。</p>
+<p><code>orientation</code>：屏幕横竖屏定向。landscape 是横向，portrait 是纵向【ipad 相反】</p>
+<p>/* iPhone 4 ----------- */</p>
+<pre><code class="language-CSS">@media only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+
+/* Styles */
+
+}
+</code></pre>
+<p>/* iPads (portrait) ----------- */</p>
+<pre><code class="language-CSS">@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+
+/* Styles */
+
+}
+</code></pre>
+<p>/* Smartphones (portrait and landscape) ----------- */</p>
+<pre><code class="language-CSS">@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+
+/* Styles */
+
+}
+</code></pre>
+<p>/* Smartphones (landscape) ----------- */</p>
+<pre><code class="language-CSS">@media only screen
+and (min-width : 321px) {
+
+/* Styles */
+
+}
+</code></pre>
+<p>/* Smartphones (portrait) ----------- */</p>
+<pre><code class="language-CSS">@media only screen
+and (max-width : 320px) {
+
+/* Styles */
+
+}
+</code></pre>
+<p>/* iPads (portrait and landscape) ----------- */</p>
+<pre><code class="language-CSS">@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+
+/* Styles */
+
+}
+</code></pre>
+<p>/* iPads (landscape) ----------- */</p>
+<pre><code class="language-CSS">@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+
+/* Styles */
+
+}
+</code></pre>
+<p>/* iPads (portrait) ----------- */</p>
+<pre><code class="language-CSS">@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+
+/* Styles */
+
+}
+</code></pre>
+<p>/* Desktops and laptops ----------- */</p>
+<pre><code class="language-CSS">@media only screen
+and (min-width : 1224px) {
+
+/* Styles */
+
+}
+</code></pre>
+<p>/* Large screens ----------- */</p>
+<pre><code class="language-CSS">@media only screen
+and (min-width : 1824px) {
+
+/* Styles */
+
+}
+</code></pre>
+<p>原文：<a href="http://www.frontopen.com/2728.html">http://www.frontopen.com/2728.html</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[YEmotion JSON Editer]]></title>
+        <id>https://blog.200011.net/yemotion-json-editer</id>
+        <link href="https://blog.200011.net/yemotion-json-editer"/>
+        <updated>2022-08-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[昨天给YEmotion做了一个 JSON 生成器，OwO.js通用（一样的 json 文件，我直接拿来用了）。本来是想用Electron来做的，后面想到可以用JavaScript的Blob。
+
+链接：https://codepen.io/y...]]></summary>
+        <content type="html"><![CDATA[<p>昨天给<code>YEmotion</code>做了一个 JSON 生成器，<code>OwO.js</code>通用（一样的 json 文件，我直接拿来用了）。本来是想用<code>Electron</code>来做的，后面想到可以用<code>JavaScript</code>的<code>Blob</code>。</p>
+<blockquote>
+<p><strong>链接：<a href="https://codepen.io/yoniu/pen/PoRVEOB">https://codepen.io/yoniu/pen/PoRVEOB</a></strong><br>
+<em>访问不了、或者速度慢可以坐个飞机</em></p>
+</blockquote>
+<p>使用方法是在选择完表情包图片格式后，点击选择文件，（以<code>twitter主题</code>为例）找到主题里的<code>emotions</code>文件夹点击上传，再进行自定义操作后点击保存文件即可生成<code>OwO.json</code>文件，覆盖原来<code>emotions</code>文件夹里的<code>OwO.json</code>文件即可。</p>
+<p><img src="https://static.gridea.dev/310489138985960002/ZkvjE5Lfe.jpg" alt="" loading="lazy"><br>
+<img src="https://static.gridea.dev/310489138985960002/vgce44J1_.jpg" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hello Gridea！]]></title>
+        <id>https://blog.200011.net/hello-gridea</id>
+        <link href="https://blog.200011.net/hello-gridea"/>
+        <updated>2022-08-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[吕好！
+]]></summary>
+        <content type="html"><![CDATA[<p>吕好！</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[jq 设置 data 的踩坑日常]]></title>
+        <id>https://blog.200011.net/20220820-daily</id>
+        <link href="https://blog.200011.net/20220820-daily"/>
+        <updated>2022-08-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[今天在做 YEmotion 的 JSON 生成器时，在绑定 data 做中文的修改发现了：
+$(element).attr('data-name', value);
+$(element).data('name', value);
+
+这两者其...]]></summary>
+        <content type="html"><![CDATA[<p>今天在做 YEmotion 的 JSON 生成器时，在绑定 data 做中文的修改发现了：</p>
+<pre><code class="language-javascript">$(element).attr('data-name', value);
+$(element).data('name', value);
+</code></pre>
+<p>这两者其实是有区别的。</p>
+<p>然后就是：</p>
+<p>对象转 json 如果遇到中文会出现NULL，应该这么做：</p>
+<pre><code class="language-javascript">let arr = new Object();
+const name1 = 'hello',
+      name2 = '你好';
+arr[name1] = {123};
+arr[`${name2}`] = {123};
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[真的有在学习]]></title>
+        <id>https://blog.200011.net/20220819</id>
+        <link href="https://blog.200011.net/20220819"/>
+        <updated>2022-08-19T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[从四月份考完试到现在一直有在继续学习，这个月底开始就可以在学校开始学习游戏相关编程（其实我想的是前端方向，但是只有游戏方向，认命了），蛮开心的。
+
+
+博客也很久没有更新，其实更不更新也都是写一些有的没的。
+刚把博客评论换成Disqus，原来...]]></summary>
+        <content type="html"><![CDATA[<p>从四月份考完试到现在一直有在继续学习，这个月底开始就可以在学校开始学习游戏相关编程（其实我想的是前端方向，但是只有游戏方向，认命了），蛮开心的。</p>
+<!-- more -->
+<center><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1946459431&auto=1&height=66"></iframe></center>
+<p>博客也很久没有更新，其实更不更新也都是写一些有的没的。</p>
+<p>刚把博客评论换成<code>Disqus</code>，原来用的<code>twikoo</code>因为云函数收费，所以为了白嫖到底还是换成免费的（其实欠费了，不想充钱）。评论不了的同学可以试试开个加速器。</p>
+<p>大家留给我的评论、邮件我都有看，因为不知道要怎么回复各位所以就没回复，因为有的网友可能会软磨硬泡让我发主题包。一些想要<code>twitter主题</code>的，一些想要<code>youStyle主题</code>的。</p>
+<p><code>twitter</code>是我在20年的时候无聊按朋友<a href="https://sumiler.com/">苏米乐</a>的想法做的，当时也没太系统性的学习前后端这些东西，可以说没怎么接触，所以写的代码乱成一团糟。从去年年底就开始对这个主题重做，期间也一直有在学习一些前端，所以到现在还没写完（因为考试，不过也没理由，大部分原因是我太懒我承认）。然后现在又觉得写的太乱，但是至少能看懂，已经在慢慢的添加备注。目前<a href="https://usj.cc/">小赵同学</a>在主题测试方面做出卓越贡献🔼，本人表示感谢。</p>
+<p><code>twitter主题</code>后面大概会开源，为了保证收费用户权益，开发版仅供收费用户使用，代码也会进行压缩删减。为什么要开源？</p>
+<p>我之后可能会没太多时间可以更新主题，而且网友们对这款主题的热情真的蛮高。另外就是开源可以让跟多人参与进来为主题更新出点力，大家自己强化代码美化外观。还有就是主题包泄露，这事可令我太失望了老铁，整的我一度以为我是在给资源网打工的，所以更新速度这么慢，这是最重要的原因。开源之后希望大家不要放到资源网上卖了，想做<code>Sales</code>还是去卖一些好东西，我这代码写的太差了。</p>
+<p><code>youStyle主题</code>嘛，再说！做这个主题的原因就是为了给<code>twitter主题</code>测试代码，所以看情况更新。</p>
+<h3 id="最近一些碎片">最近一些碎片</h3>
+<!--photosets-->
+<p><img src="https://s6.jpg.cm/2022/08/19/P6fXZh.jpg" alt="P6fXZh.jpg" loading="lazy"><br>
+<img src="https://s6.jpg.cm/2022/08/19/P6fbvW.jpg" alt="P6fbvW.jpg" loading="lazy"><br>
+<img src="https://s6.jpg.cm/2022/08/19/P6fUXS.jpg" alt="P6fUXS.jpg" loading="lazy"><br>
+<img src="https://s6.jpg.cm/2022/08/19/P6fua2.jpg" alt="P6fua2.jpg" loading="lazy"></p>
+<!--/photosets-->
+<hr>
+<p>最近在更新<code>twitter</code>也做了两个jq库（不会还有人在用jq吧）。</p>
+<h3 id="yemotionjs">YEmotion.JS</h3>
+<p>Codepen：<a href="https://codepen.io/yoniu/pen/gOeQyrB">https://codepen.io/yoniu/pen/gOeQyrB</a></p>
+<p>这是一个跟<a href="https://github.com/DIYgod/OwO">OWO</a>一样的表情控件库，其实就是使用<code>owo</code>会直接加载全部表情文件（我没看文档，所以就这么说），所以我自己做了一个引用<code>owo.json</code>的表情控件。在点击表情之后才开始加载，加载失败可以点击重试按钮重新加载。</p>
+<p>然后现在在学习<code>Electron</code>想要给这个库做一个快速添加表情包的软件（试试）。</p>
+<!--photosets-->
+<p><img src="https://s6.jpg.cm/2022/08/19/P6fVqT.jpg" alt="P6fVqT.jpg" loading="lazy"><br>
+<img src="https://s6.jpg.cm/2022/08/19/P6f8HE.png" alt="P6f8HE.png" loading="lazy"></p>
+<!--/photosets-->
+<h3 id="yalertjs">YAlert.JS</h3>
+<p>Codepen：<a href="https://codepen.io/yoniu/pen/mdxKbQz">https://codepen.io/yoniu/pen/mdxKbQz</a></p>
+<p>这是一个弹窗库，其实是为了给<code>twitter主题</code>用的，大概效果就跟 Codepen 展示的一样，在主题上就加了一些细节。</p>
+<p><img src="https://s6.jpg.cm/2022/08/19/P6fAgQ.jpg" alt="P6fAgQ.jpg" loading="lazy"></p>
+]]></content>
+    </entry>
+</feed>

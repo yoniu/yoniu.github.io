@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" style="--theme-color: #262626; --link-color: #262626;">
+<head>
+  <meta charset="UTF-8">
+  <title>Twitter：Typecho轻博客主题 - 油油</title>
+
+  <link rel="icon" href="https://static.gridea.dev/310489138985960002/RhpAONXzE.gif">
+<!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> -->
+<link rel="alternate" type="application/atom+xml" title="油油 - Atom Feed" href="https://blog.200011.net/atom.xml">
+
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?1f7f64d58220d64d15d003e8d8733430";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFCRR8Q57W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script> -->
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-182385326-1');
+    ga('set', 'dimension1', 'site/h5wc7PmcU');
+    ga('set', 'dimension2', 'post/zTX9t9VTv');
+    ga('send', 'pageview');
+    // gtag('set', {
+    //   'custom_map': {
+    //     'dimension1': 'siteId',
+    //     'dimension2': 'postId',
+    //   }
+    // })
+
+    // gtag('config', 'G-NFCRR8Q57W', {
+    //   'siteId': 'site/h5wc7PmcU',
+    //   'postId': 'post/zTX9t9VTv',
+    // });
+  </script>
+
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Twitter主题
+Twitter主题是一款个人向的Typecho轻博客主题，由油油开发完成。
+
+主题文档
+使用手册：https://www.yuque.com/yoniu/kb/uvg5v8
+更新日志：https://www.yuque....">
+
+  <meta property="og:title" content="Twitter：Typecho轻博客主题 - 油油">
+  <meta property="og:description" content="Twitter主题
+Twitter主题是一款个人向的Typecho轻博客主题，由油油开发完成。
+
+主题文档
+使用手册：https://www.yuque.com/yoniu/kb/uvg5v8
+更新日志：https://www.yuque....">
+  
+  <meta property="og:url" content="https://blog.200011.net/30/">
+  <meta property="og:site_name" content="油油">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image:alt" content="Twitter：Typecho轻博客主题">
+
+  <meta name="gridea:post_id" content="zTX9t9VTv">
+
+  <link rel="canonical" href="https://blog.200011.net/30">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.0.3/styles/a11y-light.css">
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/css/main.css">
+
+</head>
+<body>
+  
+    <link rel="stylesheet" href="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css">
+  
+  <div id="page">
+    <div class="mb-16 sticky top-0 z-20 bg-white">
+  <header class="py-4 flex items-baseline justify-between max-w-2xl mx-auto px-2">
+    <h1 class="text-lg text-center font-medium px-4 md:px-0 flex items-center">
+      <div class="site-logo-text font-normal">油</div>
+      <a href="/">油油</a>
+    </h1>
+    <div class="hidden sm:flex justify-center">
+      
+        
+        <a
+          href="https://www.200011.net"
+          class="mx-2 text-base border-b border-transparent"
+          target="_blank"
+        >主页</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href="/about"
+          class="mx-2 text-base border-b border-transparent"
+          
+        >关于</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href="/tags/blog"
+          class="mx-2 text-base border-b border-transparent"
+          
+        >随笔</a>
+        
+      
+    </div>
+    <div class="flex sm:hidden py-2 px-4 text-center cursor-pointer" @click="openMenu = true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></svg>
+    </div>
+  </header>
+
+  <div class="fixed top-0 right-0 bottom-0 left-0 bg-white hidden" :style="{
+    display: openMenu ? 'block !important' : 'none',
+  }" v-if="openMenu">
+    <div class="py-4 px-2 flex justify-end" @click="openMenu = false">
+      <div class="flex py-2 px-4 text-center cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+      </div>
+    </div>
+    <div class="flex flex-col p-4">
+      
+        
+        <a
+          href="https://www.200011.net"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          target="_blank"
+        >主页</a>
+      
+        
+        <a
+          href="/about"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        >关于</a>
+      
+        
+        <a
+          href="/tags/blog"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        >随笔</a>
+      
+    </div>
+  </div>
+</div>
+    <div class="border-b border-gray-200">
+      <div class="max-w-2xl mx-auto px-6 md:px-2">
+        <div class="my-24 text-center">
+          <h1 class="text-2xl font-bold">Twitter：Typecho轻博客主题</h1>
+          <div class="post-title-bar mx-auto rounded mt-4"></div>
+          <div class="text-gray-400 mt-4">2020.05.12</div>
+          <div class="flex justify-center mt-4">
+            
+              <a href="https://blog.200011.net/tags/theme" class="inline-flex items-center mr-4 text-sm text-gray-600">
+                <span class="mr-1">#</span>主题
+              </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="sticky-bar" class="w-full sticky top-0 z-10 bg-white" style="height: 64px;"></div>
+    <div class="p-4 md:p-16 bg-white">
+      <div class="max-w-2xl mx-auto px-4 flex relative">
+        <section class="post-content flex-1 default-post-content max-w-2xl">
+          <div v-pre>
+            <h2 id="twitter主题">Twitter主题</h2>
+<p>Twitter主题是一款个人向的Typecho轻博客主题，由油油开发完成。</p>
+<!-- more -->
+<h2 id="主题文档">主题文档</h2>
+<p>使用手册：<a href="https://www.yuque.com/yoniu/kb/uvg5v8">https://www.yuque.com/yoniu/kb/uvg5v8</a></p>
+<p>更新日志：<a href="https://www.yuque.com/yoniu/kb/update">https://www.yuque.com/yoniu/kb/update</a></p>
+<h2 id="特色功能">特色功能</h2>
+<ul>
+<li>有特色的微博功能</li>
+<li>文章海报生成</li>
+<li>隐藏内容登陆可见</li>
+<li>友情链接</li>
+<li>首页幻灯片</li>
+<li>首页博客信息卡</li>
+<li>首页分类选项卡</li>
+<li>首页展示文章评论</li>
+<li>首页隐藏指定分类</li>
+<li>首页文章置顶</li>
+<li>首页登陆注册</li>
+<li>文章图片灯箱展示</li>
+<li>文章相册视频音乐功能</li>
+<li>丰富的短代码</li>
+<li>代码高亮</li>
+<li>自定义导航栏</li>
+<li>文章阅读格式优化</li>
+<li>图片缓加载</li>
+<li>多种主题配色</li>
+<li>日夜双色自由切换</li>
+<li>文章部分加密</li>
+<li>回复可见</li>
+<li>多个自定义html位置</li>
+<li>多彩文章</li>
+<li>...</li>
+</ul>
+<h3 id="前台">前台</h3>
+<p><img src="https://s3.jpg.cm/2020/04/19/6FwWS.jpg" alt="6FwWS.jpg" loading="lazy"><br>
+<img src="https://s3.jpg.cm/2020/04/19/6FjWi.jpg" alt="6FjWi.jpg" loading="lazy"><br>
+<img src="https://s3.jpg.cm/2020/04/19/6FKh8.jpg" alt="6FKh8.jpg" loading="lazy"></p>
+
+          </div>
+          <div class="py-4 text-gray-600 flex items-center justify-between">
+            <div class="">
+              <div class="text-sm text-gray-300">最后更新于: </div>
+              <div class="text-base font-medium">2022.08.21</div>
+            </div>
+            <!-- <div class="flex items-center text-sm text-gray-600">
+              <i class="ri-eye-line"></i> <span class="ml-2">{{ views }}</span>
+            </div> -->
+          </div>
+          <div>
+            <div id="disqus_thread"></div>
+          </div>
+        </section>
+        
+          <!-- <aside class="sticky toc-container flex-shrink-0 hidden md:block">
+            <div class="text-gray-600 mb-4">目 录</div>
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#twitter%E4%B8%BB%E9%A2%98">Twitter主题</a></li>
+<li><a href="#%E4%B8%BB%E9%A2%98%E6%96%87%E6%A1%A3">主题文档</a></li>
+<li><a href="#%E7%89%B9%E8%89%B2%E5%8A%9F%E8%83%BD">特色功能</a>
+<ul>
+<li><a href="#%E5%89%8D%E5%8F%B0">前台</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </aside> -->
+        
+      </div>
+    </div>
+    <div class="py-8 text-gray-300 text-center border-t border-gray-200">
+  Powered by Gridea
+</div>
+  </div>
+
+  <script src="//cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  
+  <script src="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/js/main.js"></script>
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+    <script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://y-notebook.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+  
+  
+    <script src="//tokinx.github.io/ViewImage/view-image.min.js"></script>
+<script src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script>
+    window.ViewImage && ViewImage.init('.post-content img');
+    setTimeout(function () {
+      const elements = document.querySelectorAll('.post-content p a');
+      for (let elem of elements) { elem.target="_blank" }
+    }, 300);
+    setTimeout(function () {
+      const elements = document.querySelectorAll('.yoniu-aplayer');
+      for (let elem of elements) {
+        const url = elem.getAttribute('data-url'),
+              name = elem.getAttribute('data-name'),
+              artist = elem.getAttribute('data-artist'),
+              cover = elem.getAttribute('data-cover');
+        const ap = new APlayer({
+          container: elem,
+          audio: [{
+            name,
+            artist,
+            url,
+            cover
+          }]
+        });
+      }
+    }, 300);
+</script>
+  
+</body>
+</html>
